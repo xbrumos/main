@@ -1,0 +1,250 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b0c0f;
+  --panel: #12151c;
+  --card: #161a22;
+  --accent: #f7a801;
+  --accent-strong: #ffcf48;
+  --text: #f6f7fb;
+  --subtle: #bac2d6;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(247, 168, 1, 0.07), transparent 25%),
+    radial-gradient(circle at 80% 10%, rgba(255, 207, 72, 0.07), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 16px;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 4px 0;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.hero .lede {
+  margin: 0;
+  color: var(--subtle);
+  max-width: 640px;
+  font-size: 16px;
+}
+
+.cta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  background: linear-gradient(145deg, rgba(255, 207, 72, 0.04), rgba(12, 14, 20, 0.5)), var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat .label {
+  margin: 0;
+  color: var(--subtle);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.stat .value {
+  margin: 4px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.card .label {
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 11px;
+  margin: 0;
+}
+
+.card h3 {
+  margin: 6px 0;
+}
+
+.card .meta {
+  margin: 0 0 4px;
+  color: var(--subtle);
+}
+
+.tiny {
+  font-size: 12px;
+  color: var(--subtle);
+  margin: 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.upgrades .card {
+  min-height: 180px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #2b1c00;
+  box-shadow: 0 10px 22px rgba(247, 168, 1, 0.35);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--subtle);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px 8px 32px;
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+.meta {
+  color: var(--subtle);
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--accent-strong);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0 0 4px;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-group {
+    width: 100%;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
