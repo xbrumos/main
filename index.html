@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Churro Tycoon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Idle / Tycoon</p>
+        <h1>Churrería en automático</h1>
+        <p class="lede">
+          Consigue churros, contrata personal y aumenta tu reputación para vender sin parar.
+        </p>
+      </div>
+      <div class="cta-group">
+        <button id="fry-button" class="primary">Freír churros</button>
+        <button id="reset-button" class="ghost">Reiniciar partida</button>
+        <p id="offline-note" class="meta"></p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Estado</h2>
+        <div class="stats-grid">
+          <article class="stat">
+            <p class="label">Dinero</p>
+            <p id="cash" class="value">$0</p>
+          </article>
+          <article class="stat">
+            <p class="label">Churros listos</p>
+            <p id="churros" class="value">0</p>
+          </article>
+          <article class="stat">
+            <p class="label">Producción</p>
+            <p id="production" class="value">0 /s</p>
+          </article>
+          <article class="stat">
+            <p class="label">Ventas</p>
+            <p id="sales" class="value">0 /s</p>
+          </article>
+          <article class="stat">
+            <p class="label">Precio por churro</p>
+            <p id="price" class="value">$1.00</p>
+          </article>
+          <article class="stat">
+            <p class="label">Fama</p>
+            <p id="reputation" class="value">0</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Automatización</p>
+            <h2>Personal y puestos</h2>
+          </div>
+          <p class="meta">Generan y venden churros sin que tengas que tocar nada.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div>
+              <p class="label">Freidores</p>
+              <h3>Turnos de cocina</h3>
+              <p class="meta">Cada freidor produce churros automáticamente.</p>
+              <p class="tiny">Producción: <span id="fryer-rate">0</span> churros/seg</p>
+            </div>
+            <div class="actions">
+              <p class="badge">Tienes <span id="fryer-count">0</span></p>
+              <button id="buy-fryer" class="primary">Comprar freidor (<span id="fryer-cost">$25</span>)</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <p class="label">Vendedores</p>
+              <h3>Mostrador</h3>
+              <p class="meta">Venden churros de tu inventario al público.</p>
+              <p class="tiny">Capacidad: <span id="seller-rate">0</span> churros/seg</p>
+            </div>
+            <div class="actions">
+              <p class="badge">Tienes <span id="seller-count">0</span></p>
+              <button id="buy-seller" class="primary">Contratar vendedor (<span id="seller-cost">$35</span>)</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Mejoras</p>
+            <h2>Sube de nivel tu churrería</h2>
+          </div>
+          <p class="meta">Aumenta precio, eficiencia o el toque artesanal de tus churros.</p>
+        </div>
+
+        <div class="card-grid upgrades">
+          <article class="card">
+            <div>
+              <p class="label">Marketing</p>
+              <h3>Carteles de barrio</h3>
+              <p class="meta">Aumenta el valor de cada churro y atrae clientes.</p>
+              <p class="tiny">Precio +<span id="marketing-bonus">0%</span> por nivel</p>
+            </div>
+            <div class="actions">
+              <p class="badge">Nivel <span id="marketing-level">0</span></p>
+              <button id="buy-marketing" class="secondary">Invertir (<span id="marketing-cost">$60</span>)</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <p class="label">Receta manual</p>
+              <h3>Masa mimada</h3>
+              <p class="meta">Tus toques personales rinden más churros por clic.</p>
+              <p class="tiny">+<span id="manual-bonus">0</span> churros por nivel</p>
+            </div>
+            <div class="actions">
+              <p class="badge">Nivel <span id="manual-level">0</span></p>
+              <button id="buy-manual" class="secondary">Mejorar (<span id="manual-cost">$45</span>)</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <p class="label">Aceite premium</p>
+              <h3>Producción suave</h3>
+              <p class="meta">Mejora la velocidad de cada freidor.</p>
+              <p class="tiny">Producción +<span id="fryer-bonus">0%</span> por nivel</p>
+            </div>
+            <div class="actions">
+              <p class="badge">Nivel <span id="fryer-level">0</span></p>
+              <button id="buy-fryer-boost" class="secondary">Optimizar (<span id="fryer-upgrade-cost">$80</span>)</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Guarda automático cada pocos segundos. Disfruta de la fritura perfecta.</p>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
